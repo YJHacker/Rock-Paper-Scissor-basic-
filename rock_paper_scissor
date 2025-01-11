@@ -1,0 +1,50 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+cho = int(input("your turn for rock press 0,for peper press 1, for scissors press 2 \n"))
+print("your choice is:")
+real_choice = [rock,paper,scissors]
+user_choice = real_choice[cho]
+print(user_choice)
+# print(user_choice)
+print("computer choice is:")
+computer_choice = random.randint(0,2)
+print(real_choice[computer_choice])
+
+if cho>=3 or cho<0:
+    print("invalid number")
+
+elif cho == 0 and computer_choice == 2:
+    print("You won the game")
+elif computer_choice == 0 and cho == 2:
+    print("You lose")
+elif computer_choice > cho:
+    print("You lose")
+elif cho > computer_choice:
+    print("You won")
+elif cho == computer_choice:
+    print("It is draw")
